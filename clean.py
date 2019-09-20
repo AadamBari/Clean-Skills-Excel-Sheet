@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-
 """
 Clean an Excel file which contains the skills of consultants. Remove redundant characters, white spaces and duplicate skills. Export to Excel sheet.
 """
@@ -9,6 +8,12 @@ import pandas as pd
 import numpy as np
 from pandas import ExcelWriter
 from pandas import ExcelFile
+
+_author__ = "Aadam Bari"
+__maintainer__ = "Aadam Bari"
+__email__ = "aadambari@msn.com"
+__status__ = "Prototype"
+
 
 
 s = pd.read_excel('test.xlsx',columns=0, squeeze=True) # read excel into Series
@@ -32,10 +37,4 @@ skills_series = pd.Series(flattened_list) # convert lists of skills into a panda
 
 # write to excel
 skills_series.to_excel("output.xlsx", index=False)
-
-
-_author__ = "Aadam Bari"
-__maintainer__ = "Aadam Bari"
-__email__ = "aadambari@msn.com"
-__status__ = "Prototype"
 
